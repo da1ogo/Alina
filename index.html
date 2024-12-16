@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Алина!!</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #87CEEB; /* Голубой фон */
+            display: flex;
+            justify-content: center; /* Центрирование по горизонтали */
+            align-items: center; /* Центрирование по вертикали */
+            height: 100vh; /* Полная высота экрана */
+            overflow-x: hidden; /* Избегаем горизонтальной прокрутки */
+            cursor: pointer; /* Изменение курсора при наведении */
+            font-family: 'Open Sans', sans-serif; /* Применение шрифта Open Sans ко всему тексту */
+        }
+
+        .container {
+            text-align: center; /* Центрирование текста */
+            max-width: 400px; /* Максимальная ширина контейнера */
+            width: 100%; /* Ширина 100% */
+            padding: 20px; /* Отступы внутри контейнера */
+            margin-top: 50px; /* Отступ сверху для контейнера */
+        }
+
+        .text {
+            font-size: 30px;
+            margin: 10px 0; /* Отступы между абзацами */
+            font-weight: 700;
+            color: white; /* Цвет текста изменен на белый */
+            -webkit-text-stroke: 1.3px black; /* Обводка текста */
+        }
+
+        .image {
+            width: 80%; /* Уменьшенная ширина изображения */
+            max-width: 300px; /* Максимальная ширина изображения */
+            height: auto; /* Автоматическая высота */
+            margin-top: 20px; /* Отступ сверху для изображения */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Тень по всему контуру изображения */
+        }
+
+        .full-width-text {
+            font-size: 30px; /* Размер шрифта */
+            color: white; /* Цвет текста */
+            -webkit-text-stroke: 1px black; /* Обводка текста */
+            margin: 0; /* Убираем отступы */
+            display: flex; /* Используем flexbox для центрирования */
+            align-items: center; /* Центрирование по вертикали */
+            justify-content: center; /* Центрирование по горизонтали */
+            text-align: center; /* Центрирование текста */
+            flex-grow: 1.3; /* Позволяет тексту занимать оставшееся пространство */
+            font-weight: 700;
+        }
+    </style>
+    <script>
+        let clickCount = 0; // Счетчик нажатий
+        let currentAudio = null; // Переменная для хранения текущего аудиофайла
+
+        function changeContent() {
+            const textElements = document.querySelectorAll('.text');
+            const image = document.querySelector('.image');
+            let audio;
+
+            // Сброс текста на каждой итерации
+            textElements.forEach((textElement) => {
+                textElement.innerHTML = ''; // Очищаем текстовые элементы
+            });
+
+            if (clickCount === 0) {
+                // Первое нажатие
+                textElements[0].innerHTML = 'ЕБАНУТЫЙ ОБЗОР НА КОРОБКУ ВОСПОМИНАНИЙ))))';
+                textElements[1].innerHTML = 'ПОСЛЕ ЭКСТРЕМАЛЬНОЙ ПОЕЗДКИ НА ПЯТЕРКЕ';
+                image.src = '2.jpg'; // Замените на путь к вашему новому изображению
+                audio = new Audio('2.mp3'); // Замените на путь к вашему аудиофайлу
+            } else if (clickCount === 1) {
+                // Повторное нажатие, которое повторяет clickCount 0
+                textElements[0].innerHTML = 'ЭКСТРЕМАЛЬНАЯ ЭКСКУРСИЯ ПО СОЛНЕЧНОМУ';
+                textElements[1].innerHTML = 'ВИКА ТУТ МАГА И МОЙ ЕБАНУТЫЙ ЛОР';
+                image.src = '3.jpg'; // Замените на путь к вашему новому изображению
+                audio = new Audio('3.mp3'); // Замените на путь к вашему аудиофайлу
+            } else if (clickCount === 2) {
+                // Второе нажатие
+                textElements[0].innerHTML = 'ЭКСТРЕМАЛЬНАЯ ПЬЯНКА В СОЛНЕЧНОМ';
+                textElements[1].innerHTML = '22 НОЯБРЯ ШИЛАВМИ ДРАВЕР И НЕРАСКРЫТЫЕ ТАЙНЫ ЧЕ ТЫ ТАМ ПОНЯЛА';
+                image.src = '4.jpg'; // Замените на путь к вашему новому изображению
+                audio = new Audio('4.mp3'); // Замените на путь к вашему аудиофайлу
+            } else if (clickCount === 3) {
+                // Третье нажатие
+                textElements[0].innerHTML = 'МАКСИМ ДАЙ МНЕ РУКУ';
+                textElements[1].innerHTML = 'МАКСИМ ЗАДАЙ МНЕ ЭКСТРЕМАЛЬНЫЙ ВОПРОС';
+                textElements[2].innerHTML = 'МАКСИМ ЧЕ МЫ ТЯНЕМ ТО....фимоооооззз)))))'; // Новая строка текста
+                image.src = '5.jpg'; // Замените на путь к вашему новому изображению
+                audio = new Audio('5.mp3'); // Замените на путь к вашему аудиофайлу
+            } else if (clickCount === 4) {
+                // Четвертое нажатие
+                textElements[0].innerHTML = 'ИСТОРИЯ СУМАСШЕДШЕГО НЕПОНИМАНИЯ СТРАХА И УЖАСА';
+                textElements[1].innerHTML = 'я запомню навсегда реально';
+                textElements[2].innerHTML = ''; // Очищаем третью строку текста
+                image.src = '6.jpg'; // Замените на путь к вашему новому изображению
+                audio = new Audio('6.mp3'); // Замените на путь к вашему аудиофайлу
+            } else if (clickCount === 5) {
+                // Пятое нажатие
+                textElements[0].innerHTML = 'ЭКСТРЕМАЛЬНАЯ ИСТОРИЯ ВЫБИВАНИЯ КАЖДОЙ КОПЕЙКИ ИЗ ХЕППИ МОЛЛА ТВАРИ';
+                textElements[1].innerHTML = 'я не помню о чем там веном реально у меня мысли о другом были';
+                image.src = '7.jpg'; // Замените на путь к вашему новому изображению
+                audio = new Audio('7.mp3'); // Замените на путь к вашему аудиофайлу
+            } else if (clickCount === 6) {
+                // Шестое нажатие
+                textElements[0].innerHTML = 'ЭКСТРИМ НА УЛИЦЕ УФИМЦЕВА 6к5';
+                textElements[1].innerHTML = 'лучшие эмоции на всю жизнь';
+                image.src = '8.jpg'; // Замените на путь к вашему новому изображению
+                audio = new Audio('8.mp3'); // Замените на путь к вашему аудиофайлу
+            } else if (clickCount === 7) {
+                // Седьмое нажатие
+                image.src = ''; // Убираем изображение
+                const fullWidthText = document.createElement('div');
+                fullWidthText.className = 'full-width-text';
+                fullWidthText.innerHTML = 'АЛИНА ТЫ ЛУЧШАЯ РЕАЛЬНО Я ДО СИХ ПОР В АХУЕ И ДО СИХ ПОР НЕ ОСОЗНАЮ ВПОЛНУЮ СИЛУ КАК СУДЬБА СВЕЛА НАС Я ОЧЕНЬ СИЛЬНО НАДЕЮСЬ ЧТО ВСЕ ВСЕГДА БУДЕТ ХОРОШО И НАШЕ ЖЕЛАНИЕ БУДЕТ СБЫВАТЬСЯ ВЕЧНО 143143143<3';
+                document.querySelector('.container').innerHTML = ''; // Очищаем контейнер
+                document.querySelector('.container').appendChild(fullWidthText); // Добавляем новый текст в контейнер
+                audio = new Audio('9.mp3'); // Замените на путь к вашему аудиофайлу
+            }
+
+            // Остановка предыдущего аудиофайла, если он существует
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0; // Сброс времени
+            }
+
+            if (audio) {
+                currentAudio = audio; // Сохраняем ссылку на текущий аудиофайл
+                audio.play();
+            }
+
+            clickCount++; // Увеличиваем счетчик нажатий
+        }
+
+        // Добавляем обработчик события клика на body
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.addEventListener('click', changeContent);
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            Алина с днем рождения поздравляю счастья радости желаю
+        </div>
+        <div class="text">
+            предлагаю вспомнить наши приятные моменты
+        </div>
+        <div class="text">
+            приятного просмотра твоим красивым глазкам<3
+        </div>
+        <div class="text">
+            ПОГНА
+        </div>
+        <div class="text">
+            <!-- Добавлено третье текстовое поле -->
+        </div>
+        <img src=" " class="image"> <!-- Замените "1.jpg" на путь к вашему изображению -->
+    </div>
+</body>
+</html>
